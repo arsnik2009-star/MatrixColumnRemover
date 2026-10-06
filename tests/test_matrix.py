@@ -1,3 +1,4 @@
+from src.matrix_column_remover import remove_column
 def _run_self_tests():
     """Простейшие проверки работы remove_column без сторонних библиотек."""
     print("\n=== Запуск самопроверки ===")
