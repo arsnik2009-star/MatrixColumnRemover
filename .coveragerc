@@ -1,0 +1,10 @@
+[run]
+branch = True
+source = src
+omit =
+    src/matrix_column_remover.py
+    src/server.py
+
+[report]
+show_missing = True
+skip_covered = True
