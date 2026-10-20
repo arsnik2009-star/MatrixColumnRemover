@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "source_account_id": "ACC-0001",
+  "destination_account_id": "ACC-0002",
+  "amount": "125.00"
+}
