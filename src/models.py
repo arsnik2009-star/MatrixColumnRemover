@@ -13,17 +13,14 @@ class AccountCreate(BaseModel):
     owner: str = Field(min_length=2, max_length=80)
     opening_balance: Decimal = Field(default=Decimal("0"), ge=0)
 
-    @field_validator("owner")
+    @field_validator("owner", mode="before")
     @classmethod
-    def owner_must_not_be_blank(cls, value: str) -> str:
-        owner = value.strip()
-        if not owner:
-            raise ValueError("владелец счёта не указан")
-        return owner
+    def trim_owner(cls, value: object) -> object:
+        return value.strip() if isinstance(value, str) else value
 
 
 class AmountRequest(BaseModel):
-    amount: Decimal = Field(gt=0)
+    amount: Decimal = Field(gt=0, decimal_places=2)
 
 
 class TransferRequest(AmountRequest):

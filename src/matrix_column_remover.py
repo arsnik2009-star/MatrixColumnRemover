@@ -6,8 +6,6 @@ def validate_matrix(matrix: list[list[float]]) -> int:
     if not matrix:
         return 0
     column_count = len(matrix[0])
-    if column_count == 0:
-        return 0
     if any(len(row) != column_count for row in matrix):
         raise ValueError("строки матрицы должны иметь одинаковую длину")
     return column_count
